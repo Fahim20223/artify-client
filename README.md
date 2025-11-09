@@ -1,16 +1,33 @@
-# React + Vite
+# Artify — Creative Artwork Showcase
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live site: https://your-live-site.netlify.app
 
-Currently, two official plugins are available:
+Artify is a modern art-sharing platform where artists can upload, display,
+and share their artworks. Key features include:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Upload and manage artworks with images, descriptions, and categories.
+- Explore public artworks with search and category filters.
+- Like artworks and add them to your favorites.
+- Private pages for adding artworks, user gallery, and favorites (Firebase Auth).
+- Responsive, clean UI with light/dark theme toggling and animations.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React (Vite), Tailwind CSS, Firebase Auth, Express, MongoDB Atlas, Vercel
+- Libraries: react-image-gallery, react-awesome-reveal, react-tooltip, sweetalert2
 
-## Expanding the ESLint configuration
+## Getting started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+... (brief local dev steps: env variables, firebase config, start client & server)
+
+## Live site
+
+https://your-live-site.netlify.app
+
+## Screenshots
+
+(Include 3-4 screenshots in the repo)
+
+## Author
+
+Your Name — contact@example.com
