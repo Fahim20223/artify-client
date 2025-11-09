@@ -1,8 +1,21 @@
-import React from "react";
+import React, { use, useState } from "react";
 import { NavLink } from "react-router";
 import "./Navbar.css";
+import { AuthContext } from "../../Context/AuthContext/AuthContext";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
+  const { user, signOutUser } = use(AuthContext);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const handleSignOut = () => {
+    signOutUser().then((result) => {
+      console.log(result.user);
+      toast.success("Successfully Logged Out").catch((error) => {
+        toast.error(error.message);
+      });
+    });
+  };
+
   const links = (
     <>
       <li className="mr-2">
@@ -11,15 +24,19 @@ const Navbar = () => {
       <li>
         <NavLink to="/artworks">Explore Artworks</NavLink>
       </li>
-      {/* <li>
-        <NavLink>Home</NavLink>
-      </li>
-      <li>
-        <NavLink>Home</NavLink>
-      </li>
-      <li>
-        <NavLink>Home</NavLink>
-      </li> */}
+      {user && (
+        <>
+          <li>
+            <NavLink to="/addArtwork">Add Artwork</NavLink>
+          </li>
+          <li>
+            <NavLink to="myGallery">My Gallery</NavLink>
+          </li>
+          <li>
+            <NavLink to="myFavorite">My Favorites</NavLink>
+          </li>
+        </>
+      )}
     </>
   );
   return (
@@ -57,8 +74,40 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
-      <div className="navbar-end">
-        <a className="btn">Button</a>
+      <div className="navbar-end gap-3">
+        {!user ? (
+          <>
+            <NavLink to="/login" className="btn btn-outline btn-sm mr-2">
+              Login
+            </NavLink>
+            <NavLink to="/register" className="btn btn-secondary btn-sm">
+              Register
+            </NavLink>
+          </>
+        ) : (
+          <div className="relative">
+            <img
+              src={user.photoURL || "https://i.ibb.co/4pDNDk1/avatar.png"}
+              alt="User Avatar"
+              className="w-10 h-10 rounded-full cursor-pointer"
+              onClick={() => setShowDropdown((prev) => !prev)} // toggle dropdown
+            />
+
+            {showDropdown && (
+              <div className="absolute right-0 mt-2 w-40 bg-base-100 rounded-lg shadow-lg p-3 z-10">
+                <p className="text-sm font-semibold text-center mb-2">
+                  {user.displayName || "User"}
+                </p>
+                <button
+                  onClick={handleSignOut}
+                  className="btn btn-error btn-sm w-full"
+                >
+                  Logout
+                </button>
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );
