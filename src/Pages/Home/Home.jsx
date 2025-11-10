@@ -1,12 +1,14 @@
 import React from "react";
 import { useLoaderData } from "react-router";
 import ArtCards from "../../Components/ArtCards/ArtCards";
+import Banner from "../../Components/Banner/Banner";
 
 const Home = () => {
   const data = useLoaderData();
   console.log(data);
   return (
     <div>
+      <Banner></Banner>
       <h2 className="font-bold text-center text-secondary text-2xl py-8">
         Featured Artworks
       </h2>
