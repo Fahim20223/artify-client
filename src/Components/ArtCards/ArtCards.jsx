@@ -41,7 +41,10 @@ const ArtCards = ({ art, showLikes = true }) => {
             </span> */}
             {/* to={`/model-details/${_id}`} */}
           </div>
-          <Link className="btn rounded-full bg-linear-to-r from-pink-500 to-red-600 hover:from-red-600 hover:to-pink-500 text-white w-full btn-sm">
+          <Link
+            to={`/art-details/${_id}`}
+            className="btn rounded-full bg-linear-to-r from-pink-500 to-red-600 hover:from-red-600 hover:to-pink-500 text-white w-full btn-sm"
+          >
             View Details
           </Link>
         </div>

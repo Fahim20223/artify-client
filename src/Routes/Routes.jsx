@@ -7,6 +7,8 @@ import Register from "../Pages/Register/Register";
 import AddArts from "../Components/AddArts/AddArts";
 import MyGallery from "../Components/MyGallery/MyGallery";
 import Favorites from "../Components/Favorites/Favorites";
+import ArtDetails from "../Components/ArtsDetails/ArtDetails";
+import PrivateRoutes from "../Router/PrivateRoutes";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -39,8 +41,16 @@ export const router = createBrowserRouter([
         element: <MyGallery></MyGallery>,
       },
       {
-        path: "myFavorite",
+        path: "/myFavorite",
         element: <Favorites></Favorites>,
+      },
+      {
+        path: "/art-details/:id",
+        element: (
+          <PrivateRoutes>
+            <ArtDetails></ArtDetails>
+          </PrivateRoutes>
+        ),
       },
     ],
   },

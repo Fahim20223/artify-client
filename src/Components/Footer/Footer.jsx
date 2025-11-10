@@ -8,8 +8,8 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-base-300 bg-linear-to-r from-[#ec4899] to-[#ef4444]">
-      <div className="footer sm:footer-horizontal  text-base-content p-10">
+    <div className="bg-base-300 bg-linear-to-r from-[#ec4899] to-[#ef4444]">
+      <footer className="footer sm:footer-horizontal  text-base-content p-10">
         <nav>
           <h6 className="footer-title">Services</h6>
           <a className="link link-hover">Branding</a>
@@ -35,12 +35,12 @@ const Footer = () => {
             <FaFacebook size={24}></FaFacebook>
           </div>
         </nav>
-      </div>
+      </footer>
       <p className="text-center p-4">
         Copyright © {new Date().getFullYear()} - All right reserved by ARITFY
         Industries Ltd
       </p>
-    </footer>
+    </div>
   );
 };
 

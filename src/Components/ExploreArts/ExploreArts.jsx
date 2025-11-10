@@ -1,6 +1,7 @@
 import React from "react";
 import { useLoaderData } from "react-router";
 import ArtCards from "../ArtCards/ArtCards";
+import { Typewriter } from "react-simple-typewriter";
 
 const ExploreArts = () => {
   const data = useLoaderData();
@@ -12,7 +13,18 @@ const ExploreArts = () => {
   return (
     <div className="py-20">
       <h2 className="font-bold text-center text-secondary text-2xl mb-8">
-        All Artworks
+        <span style={{ fontWeight: "bold" }}>
+          {/* Style will be inherited from the parent element */}
+          <Typewriter
+            words={["All Artworks"]}
+            loop={3}
+            cursor
+            cursorStyle="_"
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          />
+        </span>
       </h2>
       <form onSubmit={handleSearch} className="flex justify-center gap-2">
         <label className="input rounded-full mb-10">

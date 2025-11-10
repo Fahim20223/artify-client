@@ -18,7 +18,7 @@ const Banner = () => {
     "https://thumbs.dreamstime.com/b/colorful-watercolor-splash-background-paint-strokes-ink-blots-artistic-brush-textures-abstract-horizontal-vector-banner-379332871.jpg",
   ];
   return (
-    <div className="my-16">
+    <div className="my-16 pt-27">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={30}
