@@ -46,6 +46,17 @@ const ArtDetails = () => {
                 alt=""
                 className="w-full object-cover rounded-xl shadow-md"
               />
+              <div className="flex mt-6 items-center bg-secondary w-1/2 p-4 rounded-xl bg-linear-to-r from-pink-500 to-red-600 hover:from-red-600 hover:to-pink-500 text-white">
+                <img
+                  className="w-11 h-11 rounded-full object-cover mr-5"
+                  src={art.artistPhoto}
+                  alt=""
+                />
+                <div>
+                  <h2>{art.artistName}</h2>
+                  <p>{art.totalArtworks} artworks</p>
+                </div>
+              </div>
             </div>
 
             <div className="flex flex-col justify-center space-y-4 w-full md:w-1/2">

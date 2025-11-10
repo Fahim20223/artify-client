@@ -1,4 +1,5 @@
 import React from "react";
+import { Fade } from "react-awesome-reveal";
 import { BiSolidLike } from "react-icons/bi";
 import { Link } from "react-router";
 //Card layout with image, title, artist name, category, likes count,

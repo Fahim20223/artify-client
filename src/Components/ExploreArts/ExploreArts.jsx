@@ -2,6 +2,7 @@ import React from "react";
 import { useLoaderData } from "react-router";
 import ArtCards from "../ArtCards/ArtCards";
 import { Typewriter } from "react-simple-typewriter";
+import { Fade } from "react-awesome-reveal";
 
 const ExploreArts = () => {
   const data = useLoaderData();
@@ -48,6 +49,7 @@ const ExploreArts = () => {
         </label>
         <button className="btn btn-secondary rounded-full">Search</button>
       </form>
+
       <div className="max-w-9/12 mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3 ">
           {data.map((art) => (
