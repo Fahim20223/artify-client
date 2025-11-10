@@ -8,12 +8,13 @@ const Navbar = () => {
   const { user, signOutUser } = use(AuthContext);
   const [showDropdown, setShowDropdown] = useState(false);
   const handleSignOut = () => {
-    signOutUser().then((result) => {
-      console.log(result.user);
-      toast.success("Successfully Logged Out").catch((error) => {
+    signOutUser()
+      .then(() => {
+        toast.success("Successfully Logged Out");
+      })
+      .catch((error) => {
         toast.error(error.message);
       });
-    });
   };
 
   const links = (
@@ -40,7 +41,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="navbar bg-base-100 shadow-sm px-5 py-3">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -89,7 +90,7 @@ const Navbar = () => {
             <img
               src={user.photoURL || "https://i.ibb.co/4pDNDk1/avatar.png"}
               alt="User Avatar"
-              className="w-10 h-10 rounded-full cursor-pointer"
+              className="w-13 h-13 rounded-full cursor-pointer object-cover"
               onClick={() => setShowDropdown((prev) => !prev)} // toggle dropdown
             />
 

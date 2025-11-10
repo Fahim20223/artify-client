@@ -14,7 +14,7 @@ const Register = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    toast.loading("Creating user...", { id: "create-user" });
+    // toast.loading("Creating user...", { id: "create-user" });
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
@@ -24,7 +24,7 @@ const Register = () => {
       })
       .catch((error) => {
         console.log(error);
-        toast.error(error.message, { id: "create-user" });
+        // toast.error(error.message, { id: "create-user" });
       });
   };
 

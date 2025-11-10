@@ -8,7 +8,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-base-300 ">
+    <footer className="bg-base-300 bg-linear-to-r from-[#ec4899] to-[#ef4444]">
       <div className="footer sm:footer-horizontal  text-base-content p-10">
         <nav>
           <h6 className="footer-title">Services</h6>
