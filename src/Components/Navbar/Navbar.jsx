@@ -22,15 +22,15 @@ const Navbar = () => {
       <li className="mr-2">
         <NavLink to="/">Home</NavLink>
       </li>
-      <li>
+      <li className="mr-2">
         <NavLink to="/artworks">Explore Artworks</NavLink>
       </li>
       {user && (
         <>
-          <li>
+          <li className="mr-2">
             <NavLink to="/addArtwork">Add Artwork</NavLink>
           </li>
-          <li>
+          <li className="mr-2">
             <NavLink to="myGallery">My Gallery</NavLink>
           </li>
           <li>
