@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../../Context/AuthContext/AuthContext";
@@ -7,12 +7,24 @@ import { toast } from "react-toastify";
 const Register = () => {
   const { createUser, updateUserProfile, signInWithGoogle } = use(AuthContext);
   const navigate = useNavigate();
+  const [passError, setPassError] = useState("");
   const handleRegister = (e) => {
     e.preventDefault();
     const displayName = e.target.displayName.value;
     const photoURL = e.target.photoURL.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
+
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+
+    if (!passwordRegex.test(password)) {
+      setPassError(
+        "Password must contain at least one uppercase, one lowercase letter, and be at least 6 characters long."
+      );
+      return;
+    } else {
+      setPassError("");
+    }
 
     // toast.loading("Creating user...", { id: "create-user" });
     createUser(email, password)
@@ -32,7 +44,7 @@ const Register = () => {
     // toast.loading("creating user...", { id: "create-user" });
     signInWithGoogle()
       .then((result) => {
-        toast.success("Successfully Crated");
+        toast.success("Successfully Created");
         console.log(result.user);
         navigate("/");
       })
@@ -80,6 +92,7 @@ const Register = () => {
                 className="input rounded-full focus:border-0 focus:outline-gray-200"
                 placeholder="Password"
               />
+              {passError && <p className="text-xs text-error">{passError}</p>}
               <div>
                 <a className="link link-hover">Forgot password?</a>
               </div>
