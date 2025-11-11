@@ -28,7 +28,13 @@ const Home = () => {
       <div className="max-w-9/12 mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3">
           {data.map((art) => (
-            <ArtCards showLikes={false} key={art._id} art={art}></ArtCards>
+            <ArtCards
+              showUpdate={false}
+              showDelete={false}
+              showLikes={false}
+              key={art._id}
+              art={art}
+            ></ArtCards>
           ))}
         </div>
       </div>

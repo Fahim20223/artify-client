@@ -54,7 +54,7 @@ const ArtDetails = () => {
                 />
                 <div>
                   <h2>{art.artistName}</h2>
-                  <p>{art.totalArtworks} artworks</p>
+                  <p>{art.totalArtworks} artwork</p>
                 </div>
               </div>
             </div>

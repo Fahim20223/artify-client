@@ -149,9 +149,21 @@ const AddArts = () => {
                 <option value="" disabled>
                   Select visibility
                 </option>
-                <option value="public">Public</option>
-                <option value="private">Private</option>
+                <option value="public">public</option>
+                <option value="private">private</option>
               </select>
+            </div>
+
+            {/* Total-Artworks */}
+            <div>
+              <label className="label font-medium">Artworks</label>
+              <input
+                type="number"
+                name="artworks"
+                required
+                className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
+                placeholder="Enter Total Artworks"
+              />
             </div>
 
             {/* Description Textarea */}
@@ -166,7 +178,7 @@ const AddArts = () => {
               ></textarea>
             </div>
 
-            {/* Thumbnail URL */}
+            {/* Photo URL */}
             <div>
               <label className="label font-medium">Photo URL</label>
               <input
