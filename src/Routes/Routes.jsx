@@ -21,7 +21,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/artworks",
-        loader: () => fetch("http://localhost:3000/artworks"),
+        loader: () => fetch("http://localhost:3000/public-artworks"),
         element: <ExploreArts></ExploreArts>,
       },
       {
@@ -38,7 +38,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/myGallery",
-        element: <MyGallery></MyGallery>,
+        element: (
+          <PrivateRoutes>
+            <MyGallery></MyGallery>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/myFavorite",

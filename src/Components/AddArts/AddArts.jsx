@@ -1,9 +1,52 @@
 import React, { use } from "react";
 import { AuthContext } from "../../Context/AuthContext/AuthContext";
 import { Typewriter } from "react-simple-typewriter";
+import Swal from "sweetalert2";
 
 const AddArts = () => {
   const { user } = use(AuthContext);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const formData = {
+      image: e.target.photo.value,
+      title: e.target.title.value,
+      category: e.target.category.value,
+      description: e.target.description.value,
+      medium: e.target.medium.value,
+      visibility: e.target.visibility.value,
+      artistName: user?.displayName,
+      artistPhoto: user?.photoURL,
+      userName: user?.displayName,
+      userEmail: user?.email,
+      likes: 0,
+      createdAt: new Date(),
+      totalArtwork: 6,
+    };
+    fetch("http://localhost:3000/artworks", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Successfully Added",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <div className="py-17">
@@ -23,7 +66,7 @@ const AddArts = () => {
               />
             </span>
           </h2>
-          <form className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4">
             {/* Name Field */}
             <div>
               <label className="label font-medium mb-1">User Name</label>
@@ -54,7 +97,7 @@ const AddArts = () => {
                 name="title"
                 required
                 className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
-                placeholder="Enter name"
+                placeholder="Enter title"
               />
             </div>
 
@@ -106,8 +149,8 @@ const AddArts = () => {
                 <option value="" disabled>
                   Select visibility
                 </option>
-                <option value="Public">Public</option>
-                <option value="Private">Private</option>
+                <option value="public">Public</option>
+                <option value="private">Private</option>
               </select>
             </div>
 

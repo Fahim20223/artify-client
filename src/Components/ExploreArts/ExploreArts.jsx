@@ -2,7 +2,6 @@ import React from "react";
 import { useLoaderData } from "react-router";
 import ArtCards from "../ArtCards/ArtCards";
 import { Typewriter } from "react-simple-typewriter";
-import { Fade } from "react-awesome-reveal";
 
 const ExploreArts = () => {
   const data = useLoaderData();
