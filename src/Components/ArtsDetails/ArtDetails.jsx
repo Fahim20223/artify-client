@@ -3,6 +3,8 @@ import { useParams } from "react-router";
 import { AuthContext } from "../../Context/AuthContext/AuthContext";
 import { AiFillLike } from "react-icons/ai";
 import { Typewriter } from "react-simple-typewriter";
+import { toast } from "react-toastify";
+import Loader from "../../Pages/Loader/Loader";
 
 const ArtDetails = () => {
   const { id } = useParams();
@@ -18,8 +20,38 @@ const ArtDetails = () => {
         setLoading(false);
       });
   }, [user, id]);
+
+  const handleFavorites = () => {
+    // const finalArt = {
+    //   image: art.image,
+    //   title: art.title,
+    //   category: art.category,
+    //   artistName: art.name,
+    //   createdAt: new Date(),
+    // };
+    fetch(`http://localhost:3000/favorites/${art._id}`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ ...art, userEmail: user.email }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        toast.success("Successfully added");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   if (loading) {
-    return <div>Loading....</div>;
+    return (
+      <div>
+        <Loader></Loader>
+      </div>
+    );
   }
   return (
     <div>
@@ -92,7 +124,10 @@ const ArtDetails = () => {
                 <button className="btn btn-secondary rounded-xl">
                   <AiFillLike />
                 </button>
-                <button className="btn btn-outline rounded-full border-gray-300 hover:border-pink-500 hover:text-pink-600">
+                <button
+                  onClick={handleFavorites}
+                  className="btn btn-outline rounded-full border-gray-300 hover:border-pink-500 hover:text-pink-600"
+                >
                   Add to Favorites
                 </button>
               </div>

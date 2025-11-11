@@ -34,7 +34,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/addArtwork",
-        element: <AddArts></AddArts>,
+        element: (
+          <PrivateRoutes>
+            <AddArts></AddArts>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/myGallery",
@@ -46,7 +50,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/myFavorite",
-        element: <Favorites></Favorites>,
+        element: (
+          <PrivateRoutes>
+            <Favorites></Favorites>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/art-details/:id",

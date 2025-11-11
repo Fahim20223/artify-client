@@ -8,8 +8,10 @@ import Swal from "sweetalert2";
 const ArtCards = ({
   art,
   showLikes = true,
-  showUpdate = true,
-  showDelete = true,
+  showUpdate = false,
+  showDelete = false,
+  showUnFavorites = false,
+  setArts,
 }) => {
   const { image, title, artistName, category, likes, _id } = art;
 
@@ -30,9 +32,39 @@ const ArtCards = ({
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
+            setArts((prevArts) =>
+              prevArts.filter((a) => a._id.toString() !== art._id.toString())
+            );
             Swal.fire({
               title: "Deleted!",
               text: "Your file has been deleted.",
+              icon: "success",
+            });
+          });
+      }
+    });
+  };
+  const handleUnFavorites = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, unfavorite it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:3000/my-favorites/${art._id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            setArts((prevArts) => prevArts.filter((a) => a._id !== art._id));
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your file has been unfavorite.",
               icon: "success",
             });
           });
@@ -75,6 +107,16 @@ const ArtCards = ({
             >
               Delete
             </div>
+          )}
+        </div>
+        <div>
+          {showUnFavorites && (
+            <p
+              onClick={handleUnFavorites}
+              className="badge badge-secondary badge-outline btn"
+            >
+              Make unfavorite
+            </p>
           )}
         </div>
 

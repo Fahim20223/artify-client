@@ -22,7 +22,7 @@ const AddArts = () => {
       userEmail: user?.email,
       likes: 0,
       createdAt: new Date(),
-      totalArtwork: 6,
+      totalArtworks: e.target.artworks.value,
     };
     fetch("http://localhost:3000/artworks", {
       method: "POST",
@@ -56,7 +56,7 @@ const AddArts = () => {
             <span style={{ fontWeight: "bold" }}>
               {/* Style will be inherited from the parent element */}
               <Typewriter
-                words={["All New Artwork"]}
+                words={["Add Artwork"]}
                 loop={3}
                 cursor
                 cursorStyle="_"
@@ -156,9 +156,9 @@ const AddArts = () => {
 
             {/* Total-Artworks */}
             <div>
-              <label className="label font-medium">Artworks</label>
+              <label className="label font-medium">Number Of Artworks</label>
               <input
-                type="number"
+                type="text"
                 name="artworks"
                 required
                 className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
