@@ -1,4 +1,4 @@
-import React, { use, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import { NavLink } from "react-router";
 import "./Navbar.css";
 import { AuthContext } from "../../Context/AuthContext/AuthContext";
@@ -15,6 +15,17 @@ const Navbar = () => {
       .catch((error) => {
         toast.error(error.message);
       });
+  };
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
+  useEffect(() => {
+    const html = document.querySelector("html");
+    html.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const handleTheme = (checked) => {
+    setTheme(checked ? "dark" : "light");
   };
 
   const links = (
@@ -76,6 +87,13 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end gap-3">
+        <input
+          onChange={(e) => handleTheme(e.target.checked)}
+          type="checkbox"
+          defaultChecked={localStorage.getItem("theme") === "dark"}
+          className="toggle"
+        />
+
         {!user ? (
           <>
             <NavLink to="/login" className="btn btn-outline btn-sm mr-2">

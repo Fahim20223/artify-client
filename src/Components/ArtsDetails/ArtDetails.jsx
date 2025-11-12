@@ -22,24 +22,31 @@ const ArtDetails = () => {
   }, [user, id]);
 
   const handleFavorites = () => {
-    // const finalArt = {
-    //   image: art.image,
-    //   title: art.title,
-    //   category: art.category,
-    //   artistName: art.name,
-    //   createdAt: new Date(),
-    // };
+    const finalArt = {
+      image: art.image,
+      title: art.title,
+      category: art.category,
+      artistName: art.name,
+      artistPhoto: art.artistPhoto,
+      createdAt: new Date(),
+      userEmail: user.email,
+      medium: art.medium,
+      userName: art.name,
+      totalArtworks: art.totalArtworks,
+      description: art.description,
+      likes: art.likes,
+    };
     fetch(`http://localhost:3000/favorites/${art._id}`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify({ ...art, userEmail: user.email }),
+      body: JSON.stringify(finalArt),
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        toast.success("Successfully added");
+        toast.success("Successfully added to favorites");
       })
       .catch((error) => {
         console.log(error);
@@ -54,7 +61,7 @@ const ArtDetails = () => {
     );
   }
   return (
-    <div>
+    <div className="min-h-[63vh]">
       <h2 className="font-bold text-center text-secondary text-2xl p-7">
         <span style={{ fontWeight: "bold" }}>
           {/* Style will be inherited from the parent element */}
@@ -92,7 +99,7 @@ const ArtDetails = () => {
             </div>
 
             <div className="flex flex-col justify-center space-y-4 w-full md:w-1/2">
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-800">
+              <h1 className="text-3xl md:text-4xl font-bold text-secondary">
                 {art.title}
               </h1>
               <h1 className="text-secondary">Artist : {art.artistName}</h1>

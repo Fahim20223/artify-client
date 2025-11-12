@@ -21,15 +21,11 @@ const Favorites = () => {
   }, [user]);
 
   if (loading) {
-    return (
-      <p>
-        <Loader></Loader>
-      </p>
-    );
+    return <Loader></Loader>;
   }
 
   return (
-    <div className="max-w-9/12 mx-auto min-h-[63vh] ">
+    <div className="max-w-9/12 mx-auto min-h-[63vh] py-5">
       <h2 className="text-2xl font-bold text-center text-secondary py-8">
         {arts.length === 0 ? (
           <Fade cascade={false} direction="down" triggerOnce={true}>

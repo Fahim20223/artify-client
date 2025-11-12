@@ -2,6 +2,7 @@ import React, { use } from "react";
 import { AuthContext } from "../../Context/AuthContext/AuthContext";
 import { Link, useLocation, useNavigate } from "react-router";
 import { FcGoogle } from "react-icons/fc";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const { signInUser, signInWithGoogle } = use(AuthContext);
@@ -20,6 +21,7 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error);
+        toast.error(error.message);
       });
   };
   const handleGoogleSignIn = () => {
@@ -30,6 +32,7 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error);
+        toast.error(error.message);
       });
   };
   return (

@@ -61,7 +61,9 @@ const ArtCards = ({
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
-            setArts((prevArts) => prevArts.filter((a) => a._id !== art._id));
+            setArts((prevArts) =>
+              prevArts.filter((a) => a._id.toString() !== art._id.toString())
+            );
             Swal.fire({
               title: "Deleted!",
               text: "Your file has been unfavorite.",
@@ -88,7 +90,7 @@ const ArtCards = ({
           {category}
         </h2>
 
-        <div className="text-xs text-secondary">{artistName}</div>
+        <div className="text-secondary">{artistName}</div>
         {showLikes && (
           <p className="badge badge-2xl badge-secondary btn badge-outline">
             <BiSolidLike /> {likes}

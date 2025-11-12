@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router";
 import ArtCards from "../../Components/ArtCards/ArtCards";
 import Banner from "../../Components/Banner/Banner";
 import { Typewriter } from "react-simple-typewriter";
+import Artists from "../../Components/Artists/Artists";
 
 const Home = () => {
   const data = useLoaderData();
@@ -38,6 +39,7 @@ const Home = () => {
           ))}
         </div>
       </div>
+      <Artists></Artists>
     </div>
   );
 };

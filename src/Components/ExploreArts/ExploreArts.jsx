@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLoaderData } from "react-router";
 import ArtCards from "../ArtCards/ArtCards";
 import { Typewriter } from "react-simple-typewriter";
 
 const ExploreArts = () => {
   const data = useLoaderData();
+  const [arts, setArts] = useState(data);
 
   const handleSearch = (e) => {
     e.preventDefault();
+    const search_text = e.target.search.value;
+    console.log(search_text);
+    fetch(`http://localhost:3000/search?search=${search_text}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setArts(data);
+      });
   };
 
   return (
@@ -44,14 +53,14 @@ const ExploreArts = () => {
               <path d="m21 21-4.3-4.3"></path>
             </g>
           </svg>
-          <input type="search" placeholder="Search" />
+          <input name="search" type="search" placeholder="Search" />
         </label>
         <button className="btn btn-secondary rounded-full">Search</button>
       </form>
 
       <div className="max-w-9/12 mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3 ">
-          {data.map((art) => (
+          {arts.map((art) => (
             <ArtCards key={art._id} art={art}></ArtCards>
           ))}
         </div>
