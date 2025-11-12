@@ -16,7 +16,7 @@ const Artists = () => {
 
   return (
     <div className="py-12 px-6 mx-auto max-w-8/12">
-      <h2 className="text-3xl font-bold text-center mb-10">
+      <h2 className="text-xl text-secondary md:text-2xl font-bold text-center mb-10">
         🎨 Top Artists of the Week
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ">

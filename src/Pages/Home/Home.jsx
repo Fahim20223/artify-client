@@ -4,6 +4,7 @@ import ArtCards from "../../Components/ArtCards/ArtCards";
 import Banner from "../../Components/Banner/Banner";
 import { Typewriter } from "react-simple-typewriter";
 import Artists from "../../Components/Artists/Artists";
+import MostLiked from "../../Components/MostLiked/MostLiked";
 
 const Home = () => {
   const data = useLoaderData();
@@ -40,6 +41,7 @@ const Home = () => {
         </div>
       </div>
       <Artists></Artists>
+      <MostLiked></MostLiked>
     </div>
   );
 };

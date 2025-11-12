@@ -6,6 +6,7 @@ import { Typewriter } from "react-simple-typewriter";
 const ExploreArts = () => {
   const data = useLoaderData();
   const [arts, setArts] = useState(data);
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -15,6 +16,17 @@ const ExploreArts = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        setArts(data);
+      });
+  };
+
+  const handleCategoryChange = (e) => {
+    e.preventDefault();
+    const category = e.target.value;
+    setSelectedCategory(category);
+    fetch(`http://localhost:3000/public-artworks?category=${category}`)
+      .then((res) => res.json())
+      .then((data) => {
         setArts(data);
       });
   };
@@ -35,30 +47,63 @@ const ExploreArts = () => {
           />
         </span>
       </h2>
-      <form onSubmit={handleSearch} className="flex justify-center gap-2">
-        <label className="input rounded-full mb-10">
-          <svg
-            className="h-[1em] opacity-50"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-          >
-            <g
-              strokeLinejoin="round"
-              strokeLinecap="round"
-              strokeWidth="2.5"
-              fill="none"
-              stroke="currentColor"
+      <div className="flex flex-col md:flex-row justify-center  gap-4 mb-10">
+        <form onSubmit={handleSearch} className="flex justify-center gap-2">
+          <label className="input rounded-full mb-10">
+            <svg
+              className="h-[1em] opacity-50"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
             >
-              <circle cx="11" cy="11" r="8"></circle>
-              <path d="m21 21-4.3-4.3"></path>
-            </g>
-          </svg>
-          <input name="search" type="search" placeholder="Search" />
-        </label>
-        <button className="btn btn-secondary rounded-full">Search</button>
-      </form>
+              <g
+                strokeLinejoin="round"
+                strokeLinecap="round"
+                strokeWidth="2.5"
+                fill="none"
+                stroke="currentColor"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.3-4.3"></path>
+              </g>
+            </svg>
+            <input name="search" type="search" placeholder="Search" />
+          </label>
+          <button className="btn btn-secondary rounded-full">Search</button>
+        </form>
+        <form onClick={handleCategoryChange}>
+          <div>
+            <select
+              defaultValue={""}
+              name="category"
+              required
+              className="select w-full rounded-full focus:border-0 focus:outline-gray-200"
+            >
+              <option value="" disabled>
+                Select category
+              </option>
+              <option value="Digital Painting">Digital Painting</option>
+              <option value="Abstract">Abstract</option>
+              <option value="Fantasy Art">Fantasy Art</option>
+              <option value="Portrait">Portrait</option>
+              <option value="Sculpture">Sculpture</option>
+              <option value="Watercolor">Watercolor</option>
+              <option value="Cityscape">Cityscape</option>
+              <option value="Minimalism">Minimalism</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </form>
+        {/* <div className="flex justify-center items-center py-5">
+          <select defaultValue="Pick a color" className="select">
+            <option disabled={true}>Pick a color</option>
+            <option>Crimson</option>
+            <option>Amber</option>
+            <option>Velvet</option>
+          </select>
+        </div> */}
+      </div>
 
-      <div className="max-w-9/12 mx-auto">
+      <div className="max-w-10/12 mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3 ">
           {arts.map((art) => (
             <ArtCards key={art._id} art={art}></ArtCards>

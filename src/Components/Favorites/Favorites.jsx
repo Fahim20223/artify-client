@@ -27,7 +27,7 @@ const Favorites = () => {
   return (
     <div className="max-w-9/12 mx-auto min-h-[63vh] py-5">
       <h2 className="text-2xl font-bold text-center text-secondary py-8">
-        {arts.length === 0 ? (
+        {arts?.length === 0 ? (
           <Fade cascade={false} direction="down" triggerOnce={true}>
             My Favorite ArkWorks
           </Fade>
@@ -51,7 +51,7 @@ const Favorites = () => {
       </h2>
 
       <div>
-        {arts.length === 0 ? (
+        {arts?.length === 0 ? (
           <h2 className=" flex justify-center items-center text-purple-600 md:text-3xl text-xl font-bold pt-7">
             <span style={{ fontWeight: "bold" }}>
               <Typewriter
@@ -67,8 +67,9 @@ const Favorites = () => {
           </h2>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3">
-            {arts.map((art) => (
+            {arts?.map((art) => (
               <ArtCards
+                showDetails={false}
                 setArts={setArts}
                 showUnFavorites={true}
                 showLikes={false}

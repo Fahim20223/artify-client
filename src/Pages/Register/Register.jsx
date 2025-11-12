@@ -5,13 +5,14 @@ import { AuthContext } from "../../Context/AuthContext/AuthContext";
 import { toast } from "react-toastify";
 
 const Register = () => {
-  const { createUser, updateUserProfile, signInWithGoogle } = use(AuthContext);
+  const { createUser, updateUserProfile, signInWithGoogle, setUser } =
+    use(AuthContext);
   const navigate = useNavigate();
   const [passError, setPassError] = useState("");
   const handleRegister = (e) => {
     e.preventDefault();
-    const displayName = e.target.displayName.value;
-    const photoURL = e.target.photoURL.value;
+    const name = e.target.name.value;
+    const photo = e.target.photo.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
 
@@ -30,9 +31,21 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
-        updateUserProfile(displayName, photoURL);
-        navigate("/");
-        toast.success("User Create successfully!", { id: "create-user" });
+        updateUserProfile({ displayName: name, photoURL: photo })
+          .then(() => {
+            setUser({
+              ...result.user,
+              displayName: name,
+              photoURL: photo,
+              email: email,
+            });
+            navigate("/");
+            toast.success("User Create successfully!", { id: "create-user" });
+          })
+          .catch((error) => {
+            console.log(error);
+            setUser(result.user);
+          });
       })
       .catch((error) => {
         console.log(error);
@@ -64,7 +77,7 @@ const Register = () => {
               <label className="label">Name</label>
               <input
                 type="text"
-                name="displayName"
+                name="name"
                 className="input rounded-full focus:border-0 focus:outline-gray-200"
                 placeholder="Name"
               />
@@ -72,7 +85,7 @@ const Register = () => {
               <label className="label">PhotoURL</label>
               <input
                 type="text"
-                name="photoURL"
+                name="photo"
                 className="input rounded-full focus:border-0 focus:outline-gray-200"
                 placeholder="Photo URL"
               />

@@ -106,7 +106,11 @@ const Navbar = () => {
         ) : (
           <div className="relative">
             <img
-              src={user.photoURL || "https://i.ibb.co/4pDNDk1/avatar.png"}
+              src={
+                user
+                  ? user.photoURL
+                  : "https://cdn-icons-png.flaticon.com/128/456/456212.png"
+              }
               alt="User Avatar"
               className="w-13 h-13 rounded-full cursor-pointer object-cover"
               onClick={() => setShowDropdown((prev) => !prev)} // toggle dropdown

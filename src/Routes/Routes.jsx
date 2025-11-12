@@ -9,10 +9,12 @@ import MyGallery from "../Components/MyGallery/MyGallery";
 import Favorites from "../Components/Favorites/Favorites";
 import ArtDetails from "../Components/ArtsDetails/ArtDetails";
 import PrivateRoutes from "../Router/PrivateRoutes";
+import Error from "../Pages/Error/Error";
 export const router = createBrowserRouter([
   {
     path: "/",
     Component: HomeLayout,
+    errorElement: <Error></Error>,
     children: [
       {
         index: true,
