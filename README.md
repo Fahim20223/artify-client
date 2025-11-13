@@ -1,6 +1,6 @@
 # Artify — Creative Artwork Showcase
 
-Live site: https://your-live-site.netlify.app
+Live site: https://artify-client-d88f7.web.app/
 
 Artify is a modern art-sharing platform where artists can upload, display,
 and share their artworks. Key features include:
@@ -22,12 +22,8 @@ and share their artworks. Key features include:
 
 ## Live site
 
-https://your-live-site.netlify.app
-
-## Screenshots
-
-(Include 3-4 screenshots in the repo)
+https://artify-client-d88f7.web.app/
 
 ## Author
 
-Your Name — contact@example.com
+Fahim Shahrier — fahimshahrier2023@gmail.com
