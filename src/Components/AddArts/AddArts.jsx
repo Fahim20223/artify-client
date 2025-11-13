@@ -158,11 +158,11 @@ const AddArts = () => {
             <div>
               <label className="label font-medium">Number Of Artworks</label>
               <input
-                type="text"
+                type="number"
                 name="artworks"
                 required
                 className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
-                placeholder="Enter Total Artworks"
+                placeholder="Enter Total Number of Artworks you Added in Numbers"
               />
             </div>
 

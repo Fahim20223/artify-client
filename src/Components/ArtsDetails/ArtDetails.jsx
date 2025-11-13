@@ -126,11 +126,11 @@ const ArtDetails = () => {
                   likes: {art?.likes}
                 </div>
               </div>
-              <h2 className="text-purple-600 text-base md:text-lg ">
+              <h2 className="text-secondary text-base md:text-lg ">
                 Medium: {art?.medium}
               </h2>
 
-              <p className="text-purple-600  text-base md:text-lg">
+              <p className="text-secondary  text-base md:text-lg">
                 {art?.description}
               </p>
 

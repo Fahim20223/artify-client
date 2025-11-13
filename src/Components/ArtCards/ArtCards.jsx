@@ -273,7 +273,7 @@ const ArtCards = ({
                       </label>
                       <input
                         defaultValue={totalArtworks}
-                        type="text"
+                        type="number"
                         name="artworks"
                         required
                         className="input w-full rounded-full focus:border-0 focus:outline-gray-200"

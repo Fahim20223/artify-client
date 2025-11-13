@@ -10,6 +10,7 @@ const Footer = () => {
   return (
     <div className="bg-base-300 bg-linear-to-r from-[#ec4899] to-[#ef4444]">
       <footer className="footer sm:footer-horizontal  text-base-content p-10">
+        <h2 className="font-bold text-white text-3xl">ARTIFY</h2>
         <nav>
           <h6 className="footer-title">Services</h6>
           <a className="link link-hover">Branding</a>

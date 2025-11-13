@@ -76,11 +76,9 @@ const ExploreArts = () => {
               defaultValue={""}
               name="category"
               required
-              className="select w-full rounded-full focus:border-0 focus:outline-gray-200"
+              className="select rounded-full focus:border-0 focus:outline-gray-200 ml-5"
             >
-              <option value="" disabled>
-                Select category
-              </option>
+              <option value="">Select category</option>
               <option value="Digital Painting">Digital Painting</option>
               <option value="Abstract">Abstract</option>
               <option value="Fantasy Art">Fantasy Art</option>

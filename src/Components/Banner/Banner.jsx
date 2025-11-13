@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,11 +12,17 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 const Banner = () => {
-  const slides = [
-    "https://t4.ftcdn.net/jpg/04/02/30/49/360_F_402304964_lBkApbVhuhBwHuUPmKfJxi2ieO6cbGkD.jpg",
-    "https://cdn.venngage.com/template/thumbnail/small/e4a2ab78-480e-4ec9-91e0-874defd493c7.webp",
-    "https://thumbs.dreamstime.com/b/colorful-watercolor-splash-background-paint-strokes-ink-blots-artistic-brush-textures-abstract-horizontal-vector-banner-379332871.jpg",
-  ];
+  const [dimensions, setDimensions] = useState([]);
+
+  useEffect(() => {
+    fetch(`http://localhost:3000/banner`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setDimensions(data);
+      });
+  }, []);
+
   return (
     <div className="my-16 pt-27">
       <Swiper
@@ -29,11 +35,11 @@ const Banner = () => {
         loop={true}
         className="w-full max-w-5xl mx-auto rounded-lg shadow-lg"
       >
-        {slides.map((slide, index) => (
+        {dimensions.map((dimension, index) => (
           <SwiperSlide key={index}>
             <div className="relative w-full h-64 md:h-96">
               <img
-                src={slide}
+                src={dimension.image}
                 alt={`Slide ${index + 1}`}
                 className="w-full h-full object-cover rounded-lg"
               />
