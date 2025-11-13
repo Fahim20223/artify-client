@@ -13,7 +13,7 @@ const ArtDetails = () => {
   console.log(art);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    fetch(`http://localhost:3000/artworks/${id}`)
+    fetch(`https://artify-artworks-server.vercel.app/artworks/${id}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
@@ -37,7 +37,7 @@ const ArtDetails = () => {
       description: art.description,
       likes: art.likes,
     };
-    fetch(`http://localhost:3000/favorites/${art._id}`, {
+    fetch(`https://artify-artworks-server.vercel.app/favorites/${art._id}`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -55,7 +55,7 @@ const ArtDetails = () => {
   };
 
   const handleLike = (id) => {
-    fetch(`http://localhost:3000/artworks/${id}/like`, {
+    fetch(`https://artify-artworks-server.vercel.app/artworks/${id}/like`, {
       method: "PATCH",
     })
       .then((res) => res.json())

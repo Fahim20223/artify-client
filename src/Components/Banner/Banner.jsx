@@ -15,7 +15,7 @@ const Banner = () => {
   const [dimensions, setDimensions] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/banner`)
+    fetch(`https://artify-artworks-server.vercel.app/banner`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

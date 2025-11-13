@@ -6,7 +6,7 @@ const Artists = () => {
   const [artists, setArtists] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/best-artists`)
+    fetch(`https://artify-artworks-server.vercel.app/best-artists`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

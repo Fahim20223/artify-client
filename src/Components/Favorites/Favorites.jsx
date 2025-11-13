@@ -11,7 +11,9 @@ const Favorites = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/my-favorites?email=${user.email}`)
+    fetch(
+      `https://artify-artworks-server.vercel.app/my-favorites?email=${user.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

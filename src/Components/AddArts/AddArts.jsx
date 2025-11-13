@@ -24,7 +24,7 @@ const AddArts = () => {
       createdAt: new Date(),
       totalArtworks: e.target.artworks.value,
     };
-    fetch("http://localhost:3000/artworks", {
+    fetch("https://artify-artworks-server.vercel.app/artworks", {
       method: "POST",
       headers: {
         "content-type": "application/json",

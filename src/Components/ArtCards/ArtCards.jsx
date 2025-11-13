@@ -42,7 +42,7 @@ const ArtCards = ({
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/artworks/${art._id}`, {
+        fetch(`https://artify-artworks-server.vercel.app/artworks/${art._id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -71,9 +71,12 @@ const ArtCards = ({
       confirmButtonText: "Yes, unfavorite it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/my-favorites/${art._id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://artify-artworks-server.vercel.app/my-favorites/${art._id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
@@ -111,7 +114,7 @@ const ArtCards = ({
       createdAt: new Date(),
       totalArtworks: e.target.artworks.value,
     };
-    fetch(`http://localhost:3000/artworks/${_id}`, {
+    fetch(`https://artify-artworks-server.vercel.app/artworks/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

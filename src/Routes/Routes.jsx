@@ -19,11 +19,13 @@ export const router = createBrowserRouter([
       {
         index: true,
         Component: Home,
-        loader: () => fetch("http://localhost:3000/featured-artworks"),
+        loader: () =>
+          fetch("https://artify-artworks-server.vercel.app/featured-artworks"),
       },
       {
         path: "/artworks",
-        loader: () => fetch("http://localhost:3000/public-artworks"),
+        loader: () =>
+          fetch("https://artify-artworks-server.vercel.app/public-artworks"),
         element: <ExploreArts></ExploreArts>,
       },
       {

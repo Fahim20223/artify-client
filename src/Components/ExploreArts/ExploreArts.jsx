@@ -12,7 +12,9 @@ const ExploreArts = () => {
     e.preventDefault();
     const search_text = e.target.search.value;
     console.log(search_text);
-    fetch(`http://localhost:3000/search?search=${search_text}`)
+    fetch(
+      `https://artify-artworks-server.vercel.app/search?search=${search_text}`
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -24,7 +26,9 @@ const ExploreArts = () => {
     e.preventDefault();
     const category = e.target.value;
     setSelectedCategory(category);
-    fetch(`http://localhost:3000/public-artworks?category=${category}`)
+    fetch(
+      `https://artify-artworks-server.vercel.app/public-artworks?category=${category}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setArts(data);

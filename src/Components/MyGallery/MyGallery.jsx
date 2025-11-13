@@ -10,7 +10,9 @@ const MyGallery = () => {
   const [arts, setArts] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    fetch(`http://localhost:3000/my-galleries?email=${user.email}`)
+    fetch(
+      `https://artify-artworks-server.vercel.app/my-galleries?email=${user.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 const MostLiked = () => {
   const [liked, setLiked] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:3000/most-liked`)
+    fetch(`https://artify-artworks-server.vercel.app/most-liked`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
