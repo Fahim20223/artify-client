@@ -34,7 +34,7 @@ const AddArts = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-
+        e.target.reset();
         Swal.fire({
           position: "top-end",
           icon: "success",
@@ -49,7 +49,7 @@ const AddArts = () => {
   };
 
   return (
-    <div className="py-17">
+    <div className="pb-17 pt-40 ">
       <div className="card border border-gray-200 bg-base-100 w-full max-w-md mx-auto shadow-2xl rounded-2xl">
         <div className="card-body p-6 relative">
           <h2 className="text-2xl font-bold text-center mb-6 text-secondary">
