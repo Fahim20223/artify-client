@@ -59,9 +59,6 @@ const MostLiked = () => {
                 {/* Category */}
                 <div className="mt-3 flex justify-between items-center text-sm text-gray-500">
                   <span>{art.category}</span>
-                  <span className="font-semibold text-gray-800">
-                    ${art.price}
-                  </span>
                 </div>
               </div>
             </div>

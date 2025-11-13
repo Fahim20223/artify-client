@@ -29,7 +29,7 @@ const MyGallery = () => {
     );
   }
   return (
-    <div className="min-h-[63vh]">
+    <div className="min-h-[63vh] pb-7">
       <h2 className="text-2xl font-bold text-center text-secondary py-8">
         {arts.length === 0 ? (
           <Fade cascade={false} direction="down" triggerOnce={true}>

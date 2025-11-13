@@ -124,6 +124,13 @@ const ArtCards = ({
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        fetch(
+          `https://artify-artworks-server.vercel.app/my-galleries?email=${user.email}`
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            setArts(data);
+          });
         updateArtRef.current.close();
         toast.success("Successfully updated");
       })
@@ -133,7 +140,7 @@ const ArtCards = ({
   };
 
   return (
-    <div className="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+    <div className="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200">
       <figure className="h-48 overflow-hidden">
         <img
           src={image}
