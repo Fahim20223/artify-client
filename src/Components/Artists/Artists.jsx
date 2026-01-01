@@ -15,7 +15,7 @@ const Artists = () => {
   }, []);
 
   return (
-    <div className="py-12 px-6 mx-auto max-w-8/12">
+    <div className="py-12 mx-auto max-w-7xl w-[90%]">
       <h2 className="text-xl text-secondary md:text-2xl font-bold text-center mb-10">
         🎨 Top Artists of the Week
       </h2>

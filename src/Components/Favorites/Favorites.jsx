@@ -27,7 +27,7 @@ const Favorites = () => {
   }
 
   return (
-    <div className="max-w-9/12 mx-auto min-h-[63vh] py-5">
+    <div className="max-w-7xl mx-auto min-h-[63vh] py-5">
       <h2 className="text-2xl font-bold text-center text-secondary py-8">
         {arts?.length === 0 ? (
           <Fade cascade={false} direction="down" triggerOnce={true}>
@@ -54,7 +54,7 @@ const Favorites = () => {
 
       <div>
         {arts?.length === 0 ? (
-          <h2 className=" flex justify-center items-center text-purple-600 md:text-3xl text-xl font-bold pt-7">
+          <h2 className="flex justify-center items-center text-purple-600 md:text-3xl text-xl font-bold pt-7">
             <span style={{ fontWeight: "bold" }}>
               <Typewriter
                 words={[" You have not added any favorite artwork yet !"]}

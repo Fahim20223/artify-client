@@ -12,7 +12,7 @@ const MostLiked = () => {
   }, []);
   return (
     <div>
-      <div className="py-10 px-4 md:px-10 max-w-10/12 mx-auto">
+      <div className="py-10 w-[90%] max-w-7xl  mx-auto">
         <h2 className="text-xl md:text-2xl font-bold text-center mb-8 text-secondary">
           🌟 Community Highlights (Most Liked)
         </h2>

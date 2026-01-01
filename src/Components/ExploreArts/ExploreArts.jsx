@@ -105,7 +105,7 @@ const ExploreArts = () => {
         </div> */}
       </div>
 
-      <div className="max-w-10/12 mx-auto">
+      <div className="max-w-7xl mx-auto w-[95%]">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3 ">
           {arts.map((art) => (
             <ArtCards key={art._id} art={art}></ArtCards>
