@@ -27,7 +27,7 @@ const Favorites = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto min-h-[63vh] py-5">
+    <div className="max-w-7xl mx-auto min-h-[63vh] py-5 w-[90%]">
       <h2 className="text-2xl font-bold text-center text-secondary py-8">
         {arts?.length === 0 ? (
           <Fade cascade={false} direction="down" triggerOnce={true}>

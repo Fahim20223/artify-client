@@ -70,7 +70,7 @@ const MyGallery = () => {
             </span>
           </h2>
         ) : (
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3 w-[90%]">
             {arts.map((art) => (
               <ArtCards
                 setArts={setArts}

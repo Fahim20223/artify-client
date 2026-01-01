@@ -62,11 +62,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/art-details/:id",
-        element: (
-          <PrivateRoutes>
-            <ArtDetails></ArtDetails>
-          </PrivateRoutes>
-        ),
+        element: <ArtDetails></ArtDetails>,
       },
     ],
   },
