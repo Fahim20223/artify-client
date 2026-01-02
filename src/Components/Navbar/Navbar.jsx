@@ -49,6 +49,13 @@ const Navbar = () => {
           </li>
         </>
       )} */}
+      {user && (
+        <>
+          <li className="mr-2">
+            <NavLink to="/dashboard">Dashboard</NavLink>
+          </li>
+        </>
+      )}
       {!user && (
         <>
           <li className="mr-2">
@@ -107,10 +114,16 @@ const Navbar = () => {
 
           {!user ? (
             <>
-              <NavLink to="/login" className="btn btn-outline btn-sm mr-2">
+              <NavLink
+                to="/login"
+                className="btn btn-sm mr-2 text-white bg-linear-to-r from-[#ec4899] to-[#ef4444]"
+              >
                 Login
               </NavLink>
-              <NavLink to="/register" className="btn btn-secondary btn-sm">
+              <NavLink
+                to="/register"
+                className="btn bg-linear-to-r from-[#ec4899] to-[#ef4444] text-white btn-sm"
+              >
                 Register
               </NavLink>
             </>
