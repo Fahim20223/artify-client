@@ -19,7 +19,7 @@ const mockUser = {
 };
 
 const DashboardLayout = () => {
-  const { signOutUser } = use(AuthContext);
+  const { signOutUser, user } = use(AuthContext);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
@@ -66,10 +66,10 @@ const DashboardLayout = () => {
           />
 
           <div className="dropdown dropdown-end">
-            <label tabIndex={0} className="btn btn-ghost avatar">
+            <label tabIndex={0} className="cursor-pointer avatar">
               <img
-                src={mockUser.photoURL}
-                className="w-9 rounded-full"
+                src={user ? user?.photoURL : mockUser.photoURL}
+                className="w-11 h-11 rounded-full"
                 alt="profile"
               />
             </label>
@@ -78,7 +78,7 @@ const DashboardLayout = () => {
               tabIndex={0}
               className="menu dropdown-content bg-base-100 shadow rounded-box w-48 mt-3"
             >
-              <li className="menu-title">{mockUser.displayName}</li>
+              <li className="menu-title">{user?.displayName}</li>
               <li>
                 <NavLink to="/">
                   <Home size={16} /> Home
