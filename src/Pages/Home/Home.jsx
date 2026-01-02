@@ -5,6 +5,13 @@ import Banner from "../../Components/Banner/Banner";
 import { Typewriter } from "react-simple-typewriter";
 import Artists from "../../Components/Artists/Artists";
 import MostLiked from "../../Components/MostLiked/MostLiked";
+import Features from "../../Components/Features";
+import Categories from "../../Components/Categories";
+import Testimonials from "../../Components/Testimonials";
+import Newsletter from "../../Components/Newsletter";
+import FinalCTA from "../../Components/FinalCTA";
+import FAQ from "../../Components/Faq";
+import HowItWorks from "../../Components/HowItworks";
 
 const Home = () => {
   const data = useLoaderData();
@@ -26,7 +33,6 @@ const Home = () => {
           />
         </span>
       </h2>
-
       <div className="max-w-7xl mx-auto w-[90%]">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3">
           {data.map((art) => (
@@ -42,6 +48,22 @@ const Home = () => {
       </div>
       <Artists></Artists>
       <MostLiked></MostLiked>
+      {/* === New sections below === */}
+      {/* <HowItWorks /> */}
+      {/* 5. Why Choose ARTIFY? / Features */}
+      <Features />
+      {/* 6. Browse by Categories */}
+      <Categories />
+      {/* 7. Community Statistics
+      <Stats /> */}
+      {/* 8. What Our Artists & Collectors Say */}
+      <Testimonials />
+      {/* 9. Stay Updated – Newsletter */}
+      <Newsletter />
+      {/* 10. Frequently Asked Questions */}
+      <FAQ />
+      {/* 11. Final Strong CTA */}
+      <FinalCTA />
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, use } from "react";
 import { NavLink, Outlet } from "react-router";
 import {
   Menu,
@@ -10,6 +10,8 @@ import {
   BarChart3,
   LogOut,
 } from "lucide-react";
+import { AuthContext } from "../../Context/AuthContext/AuthContext";
+import { toast } from "react-toastify";
 
 const mockUser = {
   displayName: "John Artist",
@@ -17,6 +19,7 @@ const mockUser = {
 };
 
 const DashboardLayout = () => {
+  const { signOutUser } = use(AuthContext);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
@@ -24,6 +27,16 @@ const DashboardLayout = () => {
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
   }, [theme]);
+
+  const handleSignOut = () => {
+    signOutUser()
+      .then(() => {
+        toast.success("Successfully Logged Out");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
 
   return (
     <div className="min-h-screen bg-base-200">
@@ -72,7 +85,7 @@ const DashboardLayout = () => {
                 </NavLink>
               </li>
               <li>
-                <button>
+                <button onClick={handleSignOut}>
                   <LogOut size={16} /> Logout
                 </button>
               </li>
