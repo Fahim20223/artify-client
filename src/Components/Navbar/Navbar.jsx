@@ -36,7 +36,7 @@ const Navbar = () => {
       <li className="mr-2">
         <NavLink to="/artworks">Explore Artworks</NavLink>
       </li>
-      {user && (
+      {/* {user && (
         <>
           <li className="mr-2">
             <NavLink to="/addArtwork">Add Artwork</NavLink>
@@ -46,6 +46,16 @@ const Navbar = () => {
           </li>
           <li>
             <NavLink to="myFavorite">My Favorites</NavLink>
+          </li>
+        </>
+      )} */}
+      {!user && (
+        <>
+          <li className="mr-2">
+            <NavLink to="/about-us">About-Us</NavLink>
+          </li>
+          <li className="mr-2">
+            <NavLink to="/contact-us">Contact-Us</NavLink>
           </li>
         </>
       )}

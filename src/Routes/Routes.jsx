@@ -10,6 +10,11 @@ import Favorites from "../Components/Favorites/Favorites";
 import ArtDetails from "../Components/ArtsDetails/ArtDetails";
 import PrivateRoutes from "../Router/PrivateRoutes";
 import Error from "../Pages/Error/Error";
+import AboutUs from "../Components/AboutUs/AboutUs";
+import ContactUs from "../Components/ContactUs/ContactUs";
+import DashboardOverview from "../Components/DashboardOverview/DashboardOverview";
+import DashboardLayout from "../Components/DashboardLayouts/DashboardLayout";
+// import DashboardLayout from "../Components/DashboardOverview/DashboardLayout";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -36,33 +41,45 @@ export const router = createBrowserRouter([
         path: "/register",
         element: <Register></Register>,
       },
-      {
-        path: "/addArtwork",
-        element: (
-          <PrivateRoutes>
-            <AddArts></AddArts>
-          </PrivateRoutes>
-        ),
-      },
-      {
-        path: "/myGallery",
-        element: (
-          <PrivateRoutes>
-            <MyGallery></MyGallery>
-          </PrivateRoutes>
-        ),
-      },
-      {
-        path: "/myFavorite",
-        element: (
-          <PrivateRoutes>
-            <Favorites></Favorites>
-          </PrivateRoutes>
-        ),
-      },
+
       {
         path: "/art-details/:id",
         element: <ArtDetails></ArtDetails>,
+      },
+      {
+        path: "/about-us",
+        element: <AboutUs></AboutUs>,
+      },
+      {
+        path: "/contact-us",
+        element: <ContactUs></ContactUs>,
+      },
+    ],
+  },
+
+  {
+    path: "/dashboard",
+    element: (
+      <PrivateRoutes>
+        <DashboardLayout />
+      </PrivateRoutes>
+    ),
+    children: [
+      {
+        index: true,
+        element: <DashboardOverview />,
+      },
+      {
+        path: "add-artwork",
+        element: <AddArts />,
+      },
+      {
+        path: "my-gallery",
+        element: <MyGallery />,
+      },
+      {
+        path: "my-favorites",
+        element: <Favorites />,
       },
     ],
   },
