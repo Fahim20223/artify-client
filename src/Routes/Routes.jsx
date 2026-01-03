@@ -14,6 +14,9 @@ import AboutUs from "../Components/AboutUs/AboutUs";
 import ContactUs from "../Components/ContactUs/ContactUs";
 import DashboardOverview from "../Components/DashboardOverview/DashboardOverview";
 import DashboardLayout from "../Components/DashboardLayouts/DashboardLayout";
+import Profile from "../Components/Profile/Profile";
+import Blog from "../Components/Blog/Blog";
+import PrivacyPolicy from "../Components/PrivacyPolicy/PrivacyPolicy";
 // import DashboardLayout from "../Components/DashboardOverview/DashboardLayout";
 export const router = createBrowserRouter([
   {
@@ -54,6 +57,22 @@ export const router = createBrowserRouter([
         path: "/contact-us",
         element: <ContactUs></ContactUs>,
       },
+      {
+        path: "/blog",
+        element: (
+          <PrivateRoutes>
+            <Blog></Blog>
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "/private-policy",
+        element: (
+          <PrivateRoutes>
+            <PrivacyPolicy></PrivacyPolicy>
+          </PrivateRoutes>
+        ),
+      },
     ],
   },
 
@@ -80,6 +99,14 @@ export const router = createBrowserRouter([
       {
         path: "my-favorites",
         element: <Favorites />,
+      },
+      {
+        path: "profile",
+        element: (
+          <PrivateRoutes>
+            <Profile></Profile>
+          </PrivateRoutes>
+        ),
       },
     ],
   },

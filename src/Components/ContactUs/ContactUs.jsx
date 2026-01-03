@@ -35,9 +35,9 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="min-h-screen bg-base-200">
+    <div className="min-h-screen bg-base-200 py-2">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-primary to-secondary text-primary-content py-16">
+      <div className="bg-linear-to-r from-primary to-secondary text-primary-content py-25 max-w-7xl mx-auto w-[95%] rounded-2xl my-9">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
           <p className="text-lg md:text-xl max-w-3xl mx-auto">

@@ -7,6 +7,7 @@ const ExploreArts = () => {
   const data = useLoaderData();
   const [arts, setArts] = useState(data);
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [sortByLikes, setSortByLikes] = useState("");
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -33,6 +34,17 @@ const ExploreArts = () => {
       .then((data) => {
         setArts(data);
       });
+  };
+
+  const handleLikesSort = (e) => {
+    const sortValue = e.target.value;
+    setSortByLikes(sortValue);
+
+    fetch(
+      `https://artify-artworks-server.vercel.app/public-artworks?category=${selectedCategory}&sort=${sortValue}`
+    )
+      .then((res) => res.json())
+      .then((data) => setArts(data));
   };
 
   return (
@@ -95,6 +107,18 @@ const ExploreArts = () => {
             </select>
           </div>
         </form>
+
+        <div>
+          <select
+            onChange={handleLikesSort}
+            className="select rounded-full focus:border-0 focus:outline-gray-200 ml-5"
+          >
+            <option value="">Sort by likes</option>
+            <option value="likes-desc">HIgh → Low</option>
+            <option value="likes-asc">Low → High</option>
+          </select>
+        </div>
+
         {/* <div className="flex justify-center items-center py-5">
           <select defaultValue="Pick a color" className="select">
             <option disabled={true}>Pick a color</option>
@@ -105,7 +129,7 @@ const ExploreArts = () => {
         </div> */}
       </div>
 
-      <div className="max-w-7xl mx-auto w-[95%]">
+      <div className="max-w-7xl mx-auto w-[90%]">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3 ">
           {arts.map((art) => (
             <ArtCards key={art._id} art={art}></ArtCards>

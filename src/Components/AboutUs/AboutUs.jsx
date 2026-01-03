@@ -2,9 +2,9 @@ import React from "react";
 
 const AboutUs = () => {
   return (
-    <div className="min-h-screen bg-base-200">
+    <div className="min-h-screen bg-base-200 py-2">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-primary to-secondary text-primary-content py-16">
+      <div className="bg-linear-to-r from-primary to-secondary text-primary-content py-25 max-w-7xl mx-auto rounded-2xl my-8 w-[95%]">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">About Artify</h1>
           <p className="text-lg md:text-xl max-w-3xl mx-auto">

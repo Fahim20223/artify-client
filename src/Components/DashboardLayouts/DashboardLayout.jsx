@@ -11,7 +11,7 @@ import {
   LogOut,
 } from "lucide-react";
 import { AuthContext } from "../../Context/AuthContext/AuthContext";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 
 const mockUser = {
   displayName: "John Artist",
@@ -85,6 +85,9 @@ const DashboardLayout = () => {
                 </NavLink>
               </li>
               <li>
+                <NavLink to="/dashboard/profile">👤 Profile</NavLink>
+              </li>
+              <li>
                 <button onClick={handleSignOut}>
                   <LogOut size={16} /> Logout
                 </button>
@@ -121,6 +124,7 @@ const DashboardLayout = () => {
         {/* MAIN */}
         <main className="flex-1 p-6">
           <Outlet />
+          <ToastContainer></ToastContainer>
         </main>
       </div>
     </div>

@@ -30,7 +30,7 @@ export default function Newsletter() {
           />
           <button
             type="submit"
-            className="btn btn-primary gap-2 h-12 md:h-14 px-8"
+            className="btn text-white bg-linear-to-r from-pink-500 to-red-600 gap-2 h-12 md:h-14 px-8"
           >
             <Send size={18} />
             Subscribe

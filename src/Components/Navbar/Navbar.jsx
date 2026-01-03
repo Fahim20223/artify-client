@@ -1,5 +1,5 @@
 import React, { use, useEffect, useState } from "react";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import "./Navbar.css";
 import { AuthContext } from "../../Context/AuthContext/AuthContext";
 import { toast } from "react-toastify";
@@ -54,6 +54,12 @@ const Navbar = () => {
           <li className="mr-2">
             <NavLink to="/dashboard">Dashboard</NavLink>
           </li>
+          <li className="mr-2">
+            <NavLink to="/blog">Blogs</NavLink>
+          </li>
+          <li className="mr-2">
+            <NavLink to="/private-policy">Privacy-Policies</NavLink>
+          </li>
         </>
       )}
       {!user && (
@@ -97,7 +103,7 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <a className=" text-2xl font-bold text-secondary">
+          <a href="/" className=" text-2xl font-bold text-secondary">
             ART<span className="text-purple-500">IFY</span>
           </a>
         </div>
@@ -136,7 +142,7 @@ const Navbar = () => {
                     : "https://cdn-icons-png.flaticon.com/128/456/456212.png"
                 }
                 alt="User Avatar"
-                className="w-13 h-13 rounded-full cursor-pointer object-cover"
+                className="w-11 h-11 rounded-full cursor-pointer object-cover"
                 onClick={() => setShowDropdown((prev) => !prev)} // toggle dropdown
               />
 
@@ -145,6 +151,14 @@ const Navbar = () => {
                   <p className="text-sm font-semibold text-center mb-2">
                     {user.displayName || "User"}
                   </p>
+                  <li className="btn btn-sm w-full mb-2 hover:btn-error">
+                    <Link
+                      to="/dashboard/profile"
+                      onClick={() => setShowDropdown(false)}
+                    >
+                      👤 Profile
+                    </Link>
+                  </li>
                   <button
                     onClick={handleSignOut}
                     className="btn btn-error btn-sm w-full"

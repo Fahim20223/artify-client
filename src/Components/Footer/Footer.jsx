@@ -1,11 +1,6 @@
 import React from "react";
-import {
-  FaInstagram,
-  FaTwitter,
-  FaYoutube,
-  FaFacebookF,
-  FaHeart,
-} from "react-icons/fa";
+import { FaInstagram, FaYoutube, FaFacebookF, FaHeart } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -35,22 +30,20 @@ const Footer = () => {
               </h6>
               <ul className="space-y-3 text-pink-100/80">
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Branding
-                  </a>
+                  <a className="hover:text-white transition-colors">Branding</a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <a className="hover:text-white transition-colors">
                     UI/UX Design
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <a className="hover:text-white transition-colors">
                     Motion Graphics
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <a className="hover:text-white transition-colors">
                     Social Media
                   </a>
                 </li>
@@ -63,24 +56,16 @@ const Footer = () => {
               </h6>
               <ul className="space-y-3 text-pink-100/80">
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    About Us
-                  </a>
+                  <a className="hover:text-white transition-colors">About Us</a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Careers
-                  </a>
+                  <a className="hover:text-white transition-colors">Careers</a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Contact
-                  </a>
+                  <a className="hover:text-white transition-colors">Contact</a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Blog
-                  </a>
+                  <a className="hover:text-white transition-colors">Blog</a>
                 </li>
               </ul>
             </div>
@@ -91,17 +76,17 @@ const Footer = () => {
               </h6>
               <ul className="space-y-3 text-pink-100/80">
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <a className="hover:text-white transition-colors">
                     Privacy Policy
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <a className="hover:text-white transition-colors">
                     Terms of Service
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <a className="hover:text-white transition-colors">
                     Cookie Policy
                   </a>
                 </li>
@@ -140,10 +125,22 @@ const Footer = () => {
 
           {/* Social Icons */}
           <div className="flex items-center gap-6">
-            <SocialIcon href="#" icon={<FaInstagram size={22} />} />
-            <SocialIcon href="#" icon={<FaTwitter size={22} />} />
-            <SocialIcon href="#" icon={<FaYoutube size={22} />} />
-            <SocialIcon href="#" icon={<FaFacebookF size={22} />} />
+            <SocialIcon
+              href="https://www.instagram.com/"
+              icon={<FaInstagram size={22} />}
+            />
+            <SocialIcon
+              href="https://x.com/home"
+              icon={<FaXTwitter size={22} />}
+            />
+            <SocialIcon
+              href="https://www.youtube.com/"
+              icon={<FaYoutube size={22} />}
+            />
+            <SocialIcon
+              href="https://www.facebook.com/"
+              icon={<FaFacebookF size={22} />}
+            />
           </div>
         </div>
       </div>

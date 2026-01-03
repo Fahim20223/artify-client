@@ -17,15 +17,15 @@ export default function FinalCTA() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-5 justify-center">
-          <Link to={"/artworks"} className="btn btn-primary btn-lg gap-3 px-10">
+          <Link
+            to={"/artworks"}
+            className="btn bg-linear-to-r from-pink-500 to-red-600 text-white btn-lg gap-3 px-10 border-0"
+          >
             Browse Artworks
             <ArrowRight size={18} />
           </Link>
           {!user ? (
-            <Link
-              to={"/login"}
-              className="btn btn-outline btn-lg text-white border-white hover:bg-white/10"
-            >
+            <Link to={"/login"} className="btn  btn-lg text-white">
               Login to be a Artist
             </Link>
           ) : (
