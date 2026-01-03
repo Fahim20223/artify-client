@@ -25,14 +25,11 @@ export default function FinalCTA() {
             <ArrowRight size={18} />
           </Link>
           {!user ? (
-            <Link to={"/login"} className="btn  btn-lg text-white">
+            <Link to={"/login"} className="btn btn-lg">
               Login to be a Artist
             </Link>
           ) : (
-            <Link
-              to={"/dashboard/add-artwork"}
-              className="btn btn-outline btn-lg text-white border-white hover:bg-white/10"
-            >
+            <Link to={"/dashboard/add-artwork"} className="btn btn-lg">
               Become an Artist
             </Link>
           )}
