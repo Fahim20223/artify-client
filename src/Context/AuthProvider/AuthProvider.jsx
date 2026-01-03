@@ -33,10 +33,14 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, googleProvider);
   };
 
-  const updateUserProfile = (updatedData) => {
-    return updateProfile(auth.currentUser, {
-      updatedData,
-    });
+  // const updateUserProfile = (updatedData) => {
+  //   return updateProfile(auth.currentUser, {
+  //     updatedData,
+  //   });
+  // };
+
+  const updateUserProfile = ({ displayName, photoURL }) => {
+    return updateProfile(auth.currentUser, { displayName, photoURL });
   };
 
   useEffect(() => {
