@@ -193,7 +193,7 @@ const AddArts = () => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="btn w-full text-white mt-6 rounded-full bg-linear-to-r from-pink-500 to-red-600 hover:from-pink-600 hover:to-red-700"
+              className="btn w-full text-white mt-6 rounded-full bg-linear-to-r from-pink-500 via-purple-500 to-blue-500 hover:shadow-xl"
             >
               Add Artwork
             </button>

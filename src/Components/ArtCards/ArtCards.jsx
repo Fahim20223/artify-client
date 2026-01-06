@@ -371,7 +371,7 @@ const ArtCards = ({
           {showDetails && (
             <Link
               to={`/art-details/${_id}`}
-              className="btn rounded-full bg-linear-to-r from-pink-500 to-red-600 hover:from-red-600 hover:to-pink-500 text-white w-full btn-sm"
+              className="btn rounded-full bg-linear-to-r from-pink-500 via-purple-500 to-blue-500 hover:shadow-xl text-white w-full btn-sm"
             >
               View Details
             </Link>

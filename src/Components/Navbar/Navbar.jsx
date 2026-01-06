@@ -54,12 +54,12 @@ const Navbar = () => {
           <li className="mr-2">
             <NavLink to="/dashboard">Dashboard</NavLink>
           </li>
-          <li className="mr-2">
+          {/* <li className="mr-2">
             <NavLink to="/blog">Blogs</NavLink>
           </li>
           <li className="mr-2">
             <NavLink to="/private-policy">Privacy-Policies</NavLink>
-          </li>
+          </li> */}
         </>
       )}
       {!user && (
@@ -75,7 +75,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="bg-base-100 shadow-md py-1 sticky top-0 z-50">
+    <div className="bg-base-100 shadow-xl py-1 sticky top-0 z-50">
       <div className="navbar max-w-7xl mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
@@ -122,13 +122,13 @@ const Navbar = () => {
             <>
               <NavLink
                 to="/login"
-                className="btn btn-sm mr-2 text-white bg-linear-to-r from-[#ec4899] to-[#ef4444]"
+                className="btn btn-sm mr-2 text-white bg-linear-to-r from-pink-500 via-purple-500 to-blue-500 hover:shadow-xl"
               >
                 Login
               </NavLink>
               <NavLink
                 to="/register"
-                className="btn bg-linear-to-r from-[#ec4899] to-[#ef4444] text-white btn-sm"
+                className="btn bg-linear-to-r from-pink-500 via-purple-500 to-blue-500 hover:shadow-xl text-white btn-sm"
               >
                 Register
               </NavLink>

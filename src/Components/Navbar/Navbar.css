@@ -1,4 +1,9 @@
 a.active {
-  background: linear-gradient(to right, #ec4899, #ef4444);
+  background: linear-gradient(
+    to right,
+    #ec4899,
+    /* pink-500 */ #a855f7,
+    /* purple-500 */ #3b82f6 /* blue-500 */
+  );
   color: white;
 }

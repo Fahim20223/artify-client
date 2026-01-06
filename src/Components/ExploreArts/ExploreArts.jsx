@@ -84,7 +84,9 @@ const ExploreArts = () => {
             </svg>
             <input name="search" type="search" placeholder="Search" />
           </label>
-          <button className="btn btn-secondary rounded-full">Search</button>
+          <button className="btn bg-linear-to-r from-pink-500 via-purple-500 to-blue-500 text-white rounded-full">
+            Search
+          </button>
         </form>
         <form onClick={handleCategoryChange}>
           <div>

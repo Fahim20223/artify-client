@@ -63,7 +63,7 @@ const Home = () => {
       {/* 10. Frequently Asked Questions */}
       <FAQ />
       {/* 11. Final Strong CTA */}
-      <FinalCTA />
+      {/* <FinalCTA /> */}
     </div>
   );
 };
