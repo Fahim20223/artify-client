@@ -81,7 +81,7 @@ export default function FAQ() {
           <p className="text-base-content/70">
             Still have questions?
             <a
-              href="/contact"
+              href="/contact-us"
               className="text-primary hover:underline font-medium ml-1"
             >
               Contact our support team
