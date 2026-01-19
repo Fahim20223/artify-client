@@ -62,16 +62,18 @@ const Navbar = () => {
           </li> */}
         </>
       )}
-      {!user && (
+      {/* {!user && (
         <>
-          <li className="mr-2">
-            <NavLink to="/about-us">About-Us</NavLink>
-          </li>
-          <li className="mr-2">
-            <NavLink to="/contact-us">Contact-Us</NavLink>
-          </li>
+         
         </>
-      )}
+      )} */}
+
+      <li className="mr-2">
+        <NavLink to="/about-us">About-Us</NavLink>
+      </li>
+      <li className="mr-2">
+        <NavLink to="/contact-us">Contact-Us</NavLink>
+      </li>
     </>
   );
   return (
@@ -122,13 +124,13 @@ const Navbar = () => {
             <>
               <NavLink
                 to="/login"
-                className="btn btn-sm mr-2 text-white bg-linear-to-r from-pink-500 via-purple-500 to-blue-500 hover:shadow-xl"
+                className="btn btn-sm mr-2 text-white bg-pink-500 hover:shadow-xl"
               >
                 Login
               </NavLink>
               <NavLink
                 to="/register"
-                className="btn bg-linear-to-r from-pink-500 via-purple-500 to-blue-500 hover:shadow-xl text-white btn-sm"
+                className="btn bg-pink-500 hover:shadow-xl text-white btn-sm"
               >
                 Register
               </NavLink>

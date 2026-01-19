@@ -242,7 +242,7 @@ const Login = () => {
                   {/* Login Button */}
                   <button
                     type="submit"
-                    className="w-full py-3.5 rounded-xl font-semibold text-white bg-linear-to-r from-pink-500 via-purple-500 to-blue-500 hover:shadow-xl transform transition-all duration-300 hover:scale-[1.02] hover:shadow-purple-500/50"
+                    className="w-full py-3.5 rounded-xl font-semibold text-white bg-pink-500 hover:shadow-xl transform transition-all duration-300 hover:scale-[1.02] hover:shadow-purple-500/50"
                   >
                     Login to Artify
                   </button>

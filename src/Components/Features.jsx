@@ -37,7 +37,7 @@ export default function Features() {
             return (
               <div
                 key={idx}
-                className="group relative bg-base-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-pink-100 hover:border-primary/30"
+                className="group relative base-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-pink-100 hover:border-primary/30"
               >
                 <div className="mb-5 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors">
                   <Icon size={28} strokeWidth={1.8} />

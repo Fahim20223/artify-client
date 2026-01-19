@@ -67,14 +67,14 @@ const Profile = () => {
       try {
         // 1️⃣ Fetch Favorites count
         const favRes = await fetch(
-          `https://artify-artworks-server.vercel.app/my-favorites?email=${user.email}`
+          `https://artify-artworks-server.vercel.app/my-favorites?email=${user.email}`,
         );
         const favData = await favRes.json();
         setFavoritesCount(favData.length);
 
         // 2️⃣ Fetch all artworks by the user to sum likes
         const artsRes = await fetch(
-          `https://artify-artworks-server.vercel.app/my-galleries?email=${user.email}`
+          `https://artify-artworks-server.vercel.app/my-galleries?email=${user.email}`,
         );
         const artsData = await artsRes.json();
         setArtworksCount(artsData.length);
@@ -246,7 +246,7 @@ const Profile = () => {
                 {!isEditing && (
                   <button
                     onClick={() => setIsEditing(true)}
-                    className="mt-6 w-full py-3 rounded-xl font-semibold text-white bg-linear-to-r from-pink-500 via-purple-500 to-blue-500 hover:shadow-xl transform transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
+                    className="mt-6 w-full py-3 rounded-xl font-semibold text-white bg-pink-500 hover:shadow-xl transform transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
                   >
                     <FaEdit />
                     Edit Profile

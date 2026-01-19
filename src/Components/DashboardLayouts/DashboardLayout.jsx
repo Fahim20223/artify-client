@@ -137,9 +137,7 @@ const SidebarLink = ({ to, icon, children, end = false }) => (
     end={end}
     className={({ isActive }) =>
       `flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition ${
-        isActive
-          ? "bg-linear-to-r from-pink-500 via-purple-500 to-blue-500 text-white shadow-md"
-          : "hover:bg-base-200"
+        isActive ? "bg-pink-500 text-white shadow-md" : "hover:bg-base-200"
       }`
     }
   >

@@ -49,7 +49,7 @@ const ArtCards = ({
           .then((data) => {
             console.log(data);
             setArts((prevArts) =>
-              prevArts.filter((a) => a._id.toString() !== art._id.toString())
+              prevArts.filter((a) => a._id.toString() !== art._id.toString()),
             );
             Swal.fire({
               title: "Deleted!",
@@ -75,13 +75,13 @@ const ArtCards = ({
           `https://artify-artworks-server.vercel.app/my-favorites/${art._id}`,
           {
             method: "DELETE",
-          }
+          },
         )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
             setArts((prevArts) =>
-              prevArts.filter((a) => a._id.toString() !== art._id.toString())
+              prevArts.filter((a) => a._id.toString() !== art._id.toString()),
             );
             Swal.fire({
               title: "Successfully Done!",
@@ -125,7 +125,7 @@ const ArtCards = ({
       .then((data) => {
         console.log(data);
         fetch(
-          `https://artify-artworks-server.vercel.app/my-galleries?email=${user.email}`
+          `https://artify-artworks-server.vercel.app/my-galleries?email=${user.email}`,
         )
           .then((res) => res.json())
           .then((data) => {
@@ -371,7 +371,7 @@ const ArtCards = ({
           {showDetails && (
             <Link
               to={`/art-details/${_id}`}
-              className="btn rounded-full bg-linear-to-r from-pink-500 via-purple-500 to-blue-500 hover:shadow-xl text-white w-full btn-sm"
+              className="btn rounded-full bg-pink-500 hover:shadow-xl text-white w-full btn-sm"
             >
               View Details
             </Link>

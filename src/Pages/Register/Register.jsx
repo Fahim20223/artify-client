@@ -44,7 +44,7 @@ const Register = () => {
 
     if (!passwordRegex.test(password)) {
       setPassError(
-        "Password must contain at least one uppercase, one lowercase letter, and be at least 6 characters long."
+        "Password must contain at least one uppercase, one lowercase letter, and be at least 6 characters long.",
       );
       return;
     } else {
@@ -288,7 +288,7 @@ const Register = () => {
                   {/* Register Button */}
                   <button
                     type="submit"
-                    className="w-full py-3.5 rounded-xl font-semibold text-white bg-linear-to-r from-pink-500 via-purple-500 to-blue-500 hover:shadow-xl transform transition-all duration-300 hover:scale-[1.02] hover:shadow-purple-500/50"
+                    className="w-full py-3.5 rounded-xl font-semibold text-white bg-pink-500 hover:shadow-xl transform transition-all duration-300 hover:scale-[1.02] hover:shadow-purple-500/50"
                   >
                     Create Account
                   </button>
